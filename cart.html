@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | TechGadgets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-laptop-code logo-icon"></i>
+                    <span>TechGadgets</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <a href="cart.html" class="nav-link active cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="cart-page">
+        <div class="container">
+            <div class="cart-container">
+                <div class="cart-items-container">
+                    <div class="cart-header">
+                        <h2>Your Shopping Cart</h2>
+                        <span id="item-count">0 items</span>
+                    </div>
+                    
+                    <div id="cart-items">
+                        <!-- Cart items will be dynamically inserted here -->
+                        <div class="empty-cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h3>Your cart is empty</h3>
+                            <p>Browse our products and add items to your cart</p>
+                            <a href="products.html" class="btn btn-primary">Continue Shopping</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cart-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span>Free</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax</span>
+                        <span id="tax">$0.00</span>
+                    </div>
+                    <div class="summary-row summary-total">
+                        <span>Total</span>
+                        <span id="total-amount">$0.00</span>
+                    </div>
+                    <button id="checkout-btn" class="btn btn-primary checkout-btn">Proceed to Checkout</button>
+                    <a href="products.html" class="continue-shopping">Continue Shopping</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>TechGadgets</h3>
+                    <p>Your one-stop shop for the latest technology products and accessories.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Silicon Valley</li>
+                        <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                        <li><i class="fas fa-envelope"></i> info@techgadgets.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 TechGadgets. All rights reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-apple-pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Cart functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load cart from localStorage or initialize empty array
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartCount = document.querySelector('.cart-count');
+            const itemCount = document.getElementById('item-count');
+            const subtotal = document.getElementById('subtotal');
+            const tax = document.getElementById('tax');
+            const totalAmount = document.getElementById('total-amount');
+            const checkoutBtn = document.getElementById('checkout-btn');
+            
+            // Update cart display
+            function updateCartDisplay() {
+                // Update cart count in header
+                const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                cartCount.textContent = totalItems;
+                
+                // Update item count in cart header
+                itemCount.textContent = `${totalItems} ${totalItems === 1 ? 'item' : 'items'}`;
+                
+                // Clear cart items container
+                cartItemsContainer.innerHTML = '';
+                
+                if (cart.length === 0) {
+                    // Show empty cart message
+                    cartItemsContainer.innerHTML = `
+                        <div class="empty-cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h3>Your cart is empty</h3>
+                            <p>Browse our products and add items to your cart</p>
+                            <a href="products.html" class="btn btn-primary">Continue Shopping</a>
+                        </div>
+                    `;
+                    checkoutBtn.disabled = true;
+                    subtotal.textContent = '$0.00';
+                    tax.textContent = '$0.00';
+                    totalAmount.textContent = '$0.00';
+                } else {
+                    // Calculate totals
+                    let calculatedSubtotal = 0;
+                    
+                    // Render each cart item
+                    cart.forEach(item => {
+                        const itemPrice = parseFloat(item.price.replace('$', '').replace(',', ''));
+                        calculatedSubtotal += itemPrice * item.quantity;
+                        
+                        const cartItem = document.createElement('div');
+                        cartItem.className = 'cart-item';
+                        cartItem.innerHTML = `
+                            <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+                            <div class="cart-item-details">
+                                <h3>${item.name}</h3>
+                                <div class="cart-item-price">${item.price}</div>
+                                <button class="remove-item" data-id="${item.id}">
+                                    <i class="fas fa-trash"></i> Remove
+                                </button>
+                            </div>
+                            <div class="quantity-control">
+                                <button class="quantity-btn decrease" data-id="${item.id}">-</button>
+                                <span>${item.quantity}</span>
+                                <button class="quantity-btn increase" data-id="${item.id}">+</button>
+                            </div>
+                        `;
+                        cartItemsContainer.appendChild(cartItem);
+                    });
+                    
+                    // Calculate tax (8%) and total
+                    const calculatedTax = calculatedSubtotal * 0.08;
+                    const calculatedTotal = calculatedSubtotal + calculatedTax;
+                    
+                    // Update summary
+                    subtotal.textContent = `$${calculatedSubtotal.toFixed(2)}`;
+                    tax.textContent = `$${calculatedTax.toFixed(2)}`;
+                    totalAmount.textContent = `$${calculatedTotal.toFixed(2)}`;
+                    
+                    checkoutBtn.disabled = false;
+                    
+                    // Add event listeners to quantity buttons
+                    document.querySelectorAll('.decrease').forEach(button => {
+                        button.addEventListener('click', function() {
+                            const itemId = this.getAttribute('data-id');
+                            updateQuantity(itemId, -1);
+                        });
+                    });
+                    
+                    document.querySelectorAll('.increase').forEach(button => {
+                        button.addEventListener('click', function() {
+                            const itemId = this.getAttribute('data-id');
+                            updateQuantity(itemId, 1);
+                        });
+                    });
+                    
+                    // Add event listeners to remove buttons
+                    document.querySelectorAll('.remove-item').forEach(button => {
+                        button.addEventListener('click', function() {
+                            const itemId = this.getAttribute('data-id');
+                            removeItem(itemId);
+                        });
+                    });
+                }
+            }
+            
+            // Update item quantity
+            function updateQuantity(itemId, change) {
+                const itemIndex = cart.findIndex(item => item.id === itemId);
+                
+                if (itemIndex !== -1) {
+                    cart[itemIndex].quantity += change;
+                    
+                    if (cart[itemIndex].quantity <= 0) {
+                        cart.splice(itemIndex, 1);
+                    }
+                    
+                    // Save to localStorage
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    
+                    // Update display
+                    updateCartDisplay();
+                }
+            }
+            
+            // Remove item from cart
+            function removeItem(itemId) {
+                cart = cart.filter(item => item.id !== itemId);
+                
+                // Save to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+                
+                // Update display
+                updateCartDisplay();
+            }
+            
+            // Checkout button
+            checkoutBtn.addEventListener('click', function() {
+                alert('Proceeding to checkout! In a real implementation, this would redirect to a checkout page.');
+            });
+            
+            // Initial cart display
+            updateCartDisplay();
+        });
+    </script>
+</body>
+</html>
