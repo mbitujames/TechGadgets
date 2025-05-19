@@ -1888,3 +1888,26 @@ footer {
     padding: 20px;
   }
 }
+/* No products message */
+.no-products {
+    text-align: center;
+    grid-column: 1 / -1;
+    padding: 40px 0;
+}
+
+.no-products i {
+    font-size: 3rem;
+    color: var(--light-gray);
+    margin-bottom: 20px;
+}
+
+.no-products h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.no-products p {
+    color: var(--gray);
+    margin-bottom: 20px;
+}

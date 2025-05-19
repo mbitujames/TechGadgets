@@ -17,7 +17,16 @@
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html" class="nav-link active">Products</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link">Shop <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="products.html?category=laptops">Laptops</a></li>
+                            <li><a href="products.html?category=smartphones">Smartphones</a></li>
+                            <li><a href="products.html?category=accessories">Accessories</a></li>
+                            <li><a href="products.html?category=gaming">Gaming</a></li>
+                            <li><a href="products.html?category=smart-home">Smart Home</a></li>
+                        </ul>
+                    </li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li>
@@ -40,17 +49,17 @@
 
     <section class="products-main">
         <div class="container">
-            <div class="products-filter">
-                <div class="filter-group">
-                    <label for="category">Category:</label>
-                    <select id="category">
-                        <option value="all">All Categories</option>
-                        <option value="laptops">Laptops</option>
-                        <option value="smartphones">Smartphones</option>
-                        <option value="accessories">Accessories</option>
-                        <option value="gaming">Gaming</option>
-                    </select>
-                </div>
+            <div class="filter-group">
+    <label for="category">Category:</label>
+    <select id="category">
+        <option value="all">All Categories</option>
+        <option value="laptops">Laptops</option>
+        <option value="smartphones">Smartphones</option>
+        <option value="accessories">Accessories</option>
+        <option value="gaming">Gaming</option>
+        <option value="smart-home">Smart Home</option>
+    </select>
+</div>
                 <div class="filter-group">
                     <label for="sort">Sort By:</label>
                     <select id="sort">
@@ -187,9 +196,9 @@
 
                 <div class="product-card">
                     <div class="product-badge">Popular</div>
-                    <img src="images/dell-xps.jpg" alt="Dell XPS 15" class="product-image" loading="lazy">
+                    <img src="./assets/1040.png" alt="Hp 1040" class="product-image" loading="lazy">
                     <div class="product-info">
-                        <h3 class="product-title">Dell XPS 15</h3>
+                        <h3 class="product-title">Hp Elitebook 1040 G7 X360</h3>
                         <div class="product-price">
                             <span class="current-price">$1,499.00</span>
                             <span class="old-price">$1,699.00</span>
@@ -209,6 +218,40 @@
                     </div>
                 </div>
             </div>
+            <div class="products-grid">
+    <!-- Laptop Example -->
+    <div class="product-card" data-category="laptops">
+        <div class="product-badge">New</div>
+        <img src="./assets/lenovo.png" alt="Lenovo 14-inch" class="product-image" loading="lazy">
+        <!-- ... rest of product card ... -->
+    </div>
+
+    <!-- Smartphone Example -->
+    <div class="product-card" data-category="smartphones">
+        <div class="product-badge">Best Seller</div>
+        <img src="./assets/s23.png" alt="Samsung s23" class="product-image" loading="lazy">
+        <!-- ... rest of product card ... -->
+    </div>
+
+    <!-- Accessories Example -->
+    <div class="product-card" data-category="accessories">
+        <div class="product-badge">Sale</div>
+        <img src="./assets/watches2.png" alt="Watches 2" class="product-image" loading="lazy">
+        <!-- ... rest of product card ... -->
+    </div>
+
+    <!-- Gaming Example -->
+    <div class="product-card" data-category="gaming">
+        <img src="images/gaming-product.jpg" alt="Gaming Product" class="product-image" loading="lazy">
+        <!-- ... rest of product card ... -->
+    </div>
+
+    <!-- Smart Home Example -->
+    <div class="product-card" data-category="smart-home">
+        <img src="images/smart-home-product.jpg" alt="Smart Home Product" class="product-image" loading="lazy">
+        <!-- ... rest of product card ... -->
+    </div>
+</div>
 
             <div class="pagination">
                 <a href="#" class="page-btn active">1</a>

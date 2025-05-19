@@ -121,3 +121,63 @@ document.addEventListener('DOMContentLoaded', function() {
   // Check on resize
   window.addEventListener('resize', checkMobileMenu);
 });
+// Product filtering functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Get URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryParam = urlParams.get('category');
+    
+    // If category parameter exists, filter products
+    if (categoryParam) {
+        filterProductsByCategory(categoryParam);
+        // Update the category dropdown to show the selected category
+        document.getElementById('category').value = categoryParam;
+    }
+    
+    // Category dropdown change event
+    document.getElementById('category').addEventListener('change', function() {
+        filterProductsByCategory(this.value);
+    });
+    
+    // Function to filter products by category
+    function filterProductsByCategory(category) {
+        const allProducts = document.querySelectorAll('.product-card');
+        let hasVisibleProducts = false;
+        
+        allProducts.forEach(product => {
+            const productCategory = product.getAttribute('data-category');
+            
+            if (category === 'all' || productCategory === category) {
+                product.style.display = 'block';
+                hasVisibleProducts = true;
+            } else {
+                product.style.display = 'none';
+            }
+        });
+        
+        // Show message if no products in category
+        const noProductsMessage = document.getElementById('no-products-message');
+        if (!hasVisibleProducts) {
+            if (!noProductsMessage) {
+                const message = document.createElement('div');
+                message.id = 'no-products-message';
+                message.className = 'no-products';
+                message.innerHTML = `
+                    <i class="fas fa-box-open"></i>
+                    <h3>No products found in this category</h3>
+                    <p>We're working on adding more items to this collection</p>
+                    <a href="products.html" class="btn btn-primary">View All Products</a>
+                `;
+                document.querySelector('.products-grid').appendChild(message);
+            }
+        } else if (noProductsMessage) {
+            noProductsMessage.remove();
+        }
+        
+        // Update URL without reloading the page
+        const newUrl = category === 'all' 
+            ? 'products.html' 
+            : `products.html?category=${category}`;
+        window.history.pushState({ path: newUrl }, '', newUrl);
+    }
+});
