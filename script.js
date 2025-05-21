@@ -121,63 +121,128 @@ document.addEventListener('DOMContentLoaded', function() {
   // Check on resize
   window.addEventListener('resize', checkMobileMenu);
 });
-// Product filtering functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Get URL parameters
-    const urlParams = new URLSearchParams(window.location.search);
-    const categoryParam = urlParams.get('category');
+    // Filter products by category
+    const categoryFilter = document.getElementById('category');
+    const productCards = document.querySelectorAll('.product-card');
     
-    // If category parameter exists, filter products
-    if (categoryParam) {
-        filterProductsByCategory(categoryParam);
-        // Update the category dropdown to show the selected category
-        document.getElementById('category').value = categoryParam;
-    }
-    
-    // Category dropdown change event
-    document.getElementById('category').addEventListener('change', function() {
-        filterProductsByCategory(this.value);
+    categoryFilter.addEventListener('change', function() {
+        const selectedCategory = this.value;
+        
+        productCards.forEach(card => {
+            if (selectedCategory === 'all' || card.dataset.category === selectedCategory) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
     });
     
-    // Function to filter products by category
-    function filterProductsByCategory(category) {
-        const allProducts = document.querySelectorAll('.product-card');
-        let hasVisibleProducts = false;
+    // Sort products
+    const sortFilter = document.getElementById('sort');
+    
+    sortFilter.addEventListener('change', function() {
+        const productsGrid = document.querySelector('.products-grid');
+        const products = Array.from(document.querySelectorAll('.product-card'));
         
-        allProducts.forEach(product => {
-            const productCategory = product.getAttribute('data-category');
+        products.sort((a, b) => {
+            const priceA = parseFloat(a.querySelector('.current-price').textContent.replace('$', '').replace(',', ''));
+            const priceB = parseFloat(b.querySelector('.current-price').textContent.replace('$', '').replace(',', ''));
             
-            if (category === 'all' || productCategory === category) {
-                product.style.display = 'block';
-                hasVisibleProducts = true;
-            } else {
-                product.style.display = 'none';
+            switch(this.value) {
+                case 'price-low':
+                    return priceA - priceB;
+                case 'price-high':
+                    return priceB - priceA;
+                case 'newest':
+                    // For demo purposes, we'll sort by rating count (higher first)
+                    const ratingA = parseInt(a.querySelector('.product-rating span').textContent.replace(/[^\d]/g, ''));
+                    const ratingB = parseInt(b.querySelector('.product-rating span').textContent.replace(/[^\d]/g, ''));
+                    return ratingB - ratingA;
+                default: // 'featured'
+                    return 0; // Keep original order
             }
         });
         
-        // Show message if no products in category
-        const noProductsMessage = document.getElementById('no-products-message');
-        if (!hasVisibleProducts) {
-            if (!noProductsMessage) {
-                const message = document.createElement('div');
-                message.id = 'no-products-message';
-                message.className = 'no-products';
-                message.innerHTML = `
-                    <i class="fas fa-box-open"></i>
-                    <h3>No products found in this category</h3>
-                    <p>We're working on adding more items to this collection</p>
-                    <a href="products.html" class="btn btn-primary">View All Products</a>
-                `;
-                document.querySelector('.products-grid').appendChild(message);
-            }
-        } else if (noProductsMessage) {
-            noProductsMessage.remove();
-        }
+        // Re-append sorted products
+        products.forEach(product => {
+            productsGrid.appendChild(product);
+        });
+    });
+    
+    // Search functionality
+    const searchInput = document.querySelector('.search-box input');
+    const searchButton = document.querySelector('.search-box button');
+    
+    function performSearch() {
+        const searchTerm = searchInput.value.toLowerCase();
         
-        // Update URL without reloading the page
-        const newUrl = category === 'all' 
-            ? 'products.html' 
-            : `products.html?category=${category}`;
-        window.history.pushState({ path: newUrl }, '', newUrl);
+        productCards.forEach(card => {
+            const title = card.querySelector('.product-title').textContent.toLowerCase();
+            if (title.includes(searchTerm)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
     }
+    
+    searchInput.addEventListener('keyup', function(e) {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
+    });
+    
+    searchButton.addEventListener('click', performSearch);
+    
+    // Pagination
+    const itemsPerPage = 12;
+    let currentPage = 1;
+    const pageButtons = document.querySelectorAll('.page-btn');
+    
+    function updatePagination() {
+        const totalItems = document.querySelectorAll('.product-card[style="display: block"]').length;
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        
+        // Hide all products
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.style.display = 'none';
+        });
+        
+        // Show products for current page
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        
+        const visibleProducts = Array.from(document.querySelectorAll('.product-card[style="display: none"]'))
+            .filter(card => window.getComputedStyle(card).display !== 'none');
+            
+        visibleProducts.slice(startIndex, endIndex).forEach(card => {
+            card.style.display = 'block';
+        });
+        
+        // Update pagination buttons
+        pageButtons.forEach(button => {
+            button.classList.remove('active');
+            if (button.textContent.trim() === currentPage.toString()) {
+                button.classList.add('active');
+            }
+        });
+    }
+    
+    pageButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if (this.textContent.includes('Next')) {
+                currentPage++;
+            } else {
+                currentPage = parseInt(this.textContent);
+            }
+            
+            updatePagination();
+        });
+    });
+    
+    // Initialize
+    updatePagination();
 });
