@@ -49,36 +49,38 @@
 
     <section class="products-main">
         <div class="container">
-            <div class="filter-group">
-    <label for="category">Category:</label>
-    <select id="category">
-        <option value="all">All Categories</option>
-        <option value="laptops">Laptops</option>
-        <option value="smartphones">Smartphones</option>
-        <option value="accessories">Accessories</option>
-        <option value="gaming">Gaming</option>
-        <option value="smart-home">Smart Home</option>
-    </select>
-</div>
-<div class="filter-group">
-    <label for="sort">Sort By:</label>
-    <select id="sort">
-        <option value="featured">Featured</option>
-        <option value="price-low">Price: Low to High</option>
-        <option value="price-high">Price: High to Low</option>
-        <option value="newest">Newest Arrivals</option>
-    </select>
-</div>
-<div class="search-box">
-    <input type="text" placeholder="Search products...">
-    <button><i class="fas fa-search"></i></button>
-</div>
-    </div>
+            <div class="products-filter">
+                <div class="filter-group">
+                    <label for="category">Category:</label>
+                    <select id="category">
+                        <option value="all">All Categories</option>
+                        <option value="laptops">Laptops</option>
+                        <option value="smartphones">Smartphones</option>
+                        <option value="accessories">Accessories</option>
+                        <option value="gaming">Gaming</option>
+                        <option value="smart-home">Smart Home</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sort">Sort By:</label>
+                    <select id="sort">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest Arrivals</option>
+                    </select>
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="Search products...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
     <div class="products-grid">
     <!-- Laptops (10 products) -->
     <div class="product-card" data-category="laptops">
         <div class="product-badge">New</div>
-        <img src="./assets/lenovo.png" alt="Lenovo ThinkPad X1 Carbon" class="product-image" loading="lazy">
+        <img src="./assets/LenovoThinkPadX1Carbon.jpg" alt="Lenovo ThinkPad X1 Carbon" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Lenovo ThinkPad X1 Carbon</h3>
             <div class="product-price">
@@ -102,7 +104,7 @@
 
     <div class="product-card" data-category="laptops">
         <div class="product-badge">Best Seller</div>
-        <img src="./assets/macbook-pro.jpg" alt="MacBook Pro 16-inch" class="product-image" loading="lazy">
+        <img src="./assets/MacBookPro16-inch.jpg" alt="MacBook Pro 16-inch" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">MacBook Pro 16-inch</h3>
             <div class="product-price">
@@ -125,7 +127,7 @@
     </div>
 
     <div class="product-card" data-category="laptops">
-        <img src="./assets/dell-xps.jpg" alt="Dell XPS 15" class="product-image" loading="lazy">
+        <img src="./assets/DellXPS15.jpg" alt="Dell XPS 15" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Dell XPS 15</h3>
             <div class="product-price">
@@ -149,7 +151,7 @@
 
     <div class="product-card" data-category="laptops">
         <div class="product-badge">Popular</div>
-        <img src="./assets/hp-spectre.jpg" alt="HP Spectre x360" class="product-image" loading="lazy">
+        <img src="./assets/HPSpectrex360.jpg" alt="HP Spectre x360" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">HP Spectre x360</h3>
             <div class="product-price">
@@ -172,7 +174,7 @@
     </div>
 
     <div class="product-card" data-category="laptops">
-        <img src="./assets/asus-zenbook.jpg" alt="ASUS ZenBook 14" class="product-image" loading="lazy">
+        <img src="./assets/ASUSZenBook14.jpg" alt="ASUS ZenBook 14" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">ASUS ZenBook 14</h3>
             <div class="product-price">
@@ -195,7 +197,7 @@
 
     <div class="product-card" data-category="laptops">
         <div class="product-badge">Sale</div>
-        <img src="./assets/acer-swift.jpg" alt="Acer Swift 3" class="product-image" loading="lazy">
+        <img src="./assets/AcerSwift3.jpg" alt="Acer Swift 3" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Acer Swift 3</h3>
             <div class="product-price">
@@ -218,7 +220,7 @@
     </div>
 
     <div class="product-card" data-category="laptops">
-        <img src="./assets/msi-gaming.jpg" alt="MSI Gaming Laptop" class="product-image" loading="lazy">
+        <img src="./assets/MSIGamingLaptop.jpg" alt="MSI Gaming Laptop" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">MSI Gaming Laptop</h3>
             <div class="product-price">
@@ -241,7 +243,7 @@
 
     <div class="product-card" data-category="laptops">
         <div class="product-badge">New</div>
-        <img src="./assets/razer-blade.jpg" alt="Razer Blade 15" class="product-image" loading="lazy">
+        <img src="./assets/RazerBlade15.jpg" alt="Razer Blade 15" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Razer Blade 15</h3>
             <div class="product-price">
@@ -263,7 +265,7 @@
     </div>
 
     <div class="product-card" data-category="laptops">
-        <img src="./assets/microsoft-surface.jpg" alt="Microsoft Surface Laptop 5" class="product-image" loading="lazy">
+        <img src="./assets/MicrosoftSurfaceLaptop5.jpg" alt="Microsoft Surface Laptop 5" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Surface Laptop 5</h3>
             <div class="product-price">
@@ -287,7 +289,7 @@
 
     <div class="product-card" data-category="laptops">
         <div class="product-badge">Limited</div>
-        <img src="./assets/lg-gram.jpg" alt="LG Gram 17" class="product-image" loading="lazy">
+        <img src="./assets/LGGram17.jpg" alt="LG Gram 17" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">LG Gram 17</h3>
             <div class="product-price">
@@ -311,7 +313,7 @@
     <!-- Smartphones (10 products) -->
     <div class="product-card" data-category="smartphones">
         <div class="product-badge">New</div>
-        <img src="./assets/iphone-15.jpg" alt="iPhone 15 Pro" class="product-image" loading="lazy">
+        <img src="./assets/iPhone15Pro.jpg" alt="iPhone 15 Pro" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">iPhone 15 Pro</h3>
             <div class="product-price">
@@ -334,7 +336,7 @@
 
     <div class="product-card" data-category="smartphones">
         <div class="product-badge">Best Seller</div>
-        <img src="./assets/s23.png" alt="Samsung Galaxy S23 Ultra" class="product-image" loading="lazy">
+        <img src="./assets/SamsungGalaxyS23Ultra.jpg" alt="Samsung Galaxy S23 Ultra" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Galaxy S23 Ultra</h3>
             <div class="product-price">
@@ -356,7 +358,7 @@
     </div>
 
     <div class="product-card" data-category="smartphones">
-        <img src="./assets/google-pixel.jpg" alt="Google Pixel 7 Pro" class="product-image" loading="lazy">
+        <img src="./assets/GooglePixel7Pro.jpg" alt="Google Pixel 7 Pro" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Pixel 7 Pro</h3>
             <div class="product-price">
@@ -380,7 +382,7 @@
 
     <div class="product-card" data-category="smartphones">
         <div class="product-badge">Popular</div>
-        <img src="./assets/oneplus-11.jpg" alt="OnePlus 11" class="product-image" loading="lazy">
+        <img src="./assets/OnePlus11.jpg" alt="OnePlus 11" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">OnePlus 11</h3>
             <div class="product-price">
@@ -402,7 +404,7 @@
     </div>
 
     <div class="product-card" data-category="smartphones">
-        <img src="./assets/xiaomi-13.jpg" alt="Xiaomi 13 Pro" class="product-image" loading="lazy">
+        <img src="./assets/Xiaomi13Pro.jpg" alt="Xiaomi 13 Pro" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Xiaomi 13 Pro</h3>
             <div class="product-price">
@@ -425,7 +427,7 @@
 
     <div class="product-card" data-category="smartphones">
         <div class="product-badge">Sale</div>
-        <img src="./assets/oppo-find.jpg" alt="OPPO Find X5 Pro" class="product-image" loading="lazy">
+        <img src="./assets/OPPOFindX5Pro.jpg" alt="OPPO Find X5 Pro" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">OPPO Find X5 Pro</h3>
             <div class="product-price">
@@ -448,7 +450,7 @@
     </div>
 
     <div class="product-card" data-category="smartphones">
-        <img src="./assets/motorola-edge.jpg" alt="Motorola Edge+" class="product-image" loading="lazy">
+        <img src="./assets/MotorolaEdge+.jpg" alt="Motorola Edge+" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Motorola Edge+</h3>
             <div class="product-price">
@@ -471,7 +473,7 @@
 
     <div class="product-card" data-category="smartphones">
         <div class="product-badge">New</div>
-        <img src="./assets/nothing-phone.jpg" alt="Nothing Phone 2" class="product-image" loading="lazy">
+        <img src="./assets/NothingPhone2.jpg" alt="Nothing Phone 2" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Nothing Phone 2</h3>
             <div class="product-price">
@@ -493,7 +495,7 @@
     </div>
 
     <div class="product-card" data-category="smartphones">
-        <img src="./assets/asus-rog.jpg" alt="ASUS ROG Phone 7" class="product-image" loading="lazy">
+        <img src="./assets/ASUSROGPhone7.jpg" alt="ASUS ROG Phone 7" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">ASUS ROG Phone 7</h3>
             <div class="product-price">
@@ -516,7 +518,7 @@
 
     <div class="product-card" data-category="smartphones">
         <div class="product-badge">Limited</div>
-        <img src="./assets/sony-xperia.jpg" alt="Sony Xperia 1 V" class="product-image" loading="lazy">
+        <img src="./assets/SonyXperia1V.jpg" alt="Sony Xperia 1 V" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Sony Xperia 1 V</h3>
             <div class="product-price">
@@ -540,7 +542,7 @@
     <!-- Accessories (10 products) -->
     <div class="product-card" data-category="accessories">
         <div class="product-badge">New</div>
-        <img src="./assets/airpods-pro.jpg" alt="AirPods Pro 2" class="product-image" loading="lazy">
+        <img src="./assets/AirPodsPro2.jpg" alt="AirPods Pro 2" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">AirPods Pro 2</h3>
             <div class="product-price">
@@ -563,7 +565,7 @@
 
     <div class="product-card" data-category="accessories">
         <div class="product-badge">Best Seller</div>
-        <img src="./assets/sony-headphones.jpg" alt="Sony WH-1000XM5" class="product-image" loading="lazy">
+        <img src="./assets/SonyWH-1000XM5.jpg" alt="Sony WH-1000XM5" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Sony WH-1000XM5</h3>
             <div class="product-price">
@@ -586,7 +588,7 @@
     </div>
 
     <div class="product-card" data-category="accessories">
-        <img src="./assets/apple-watch.jpg" alt="Apple Watch Ultra" class="product-image" loading="lazy">
+        <img src="./assets/AppleWatchUltra.jpg" alt="Apple Watch Ultra" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Apple Watch Ultra</h3>
             <div class="product-price">
@@ -609,7 +611,7 @@
 
     <div class="product-card" data-category="accessories">
         <div class="product-badge">Popular</div>
-        <img src="./assets/samsung-watch.jpg" alt="Samsung Galaxy Watch 5 Pro" class="product-image" loading="lazy">
+        <img src="./assets/GalaxyWatch5Pro.jpg" alt="Samsung Galaxy Watch 5 Pro" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Galaxy Watch 5 Pro</h3>
             <div class="product-price">
@@ -632,7 +634,7 @@
     </div>
 
     <div class="product-card" data-category="accessories">
-        <img src="./assets/logitech-mx.jpg" alt="Logitech MX Master 3S" class="product-image" loading="lazy">
+        <img src="./assets/LogitechMXMaster3S.jpg" alt="Logitech MX Master 3S" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Logitech MX Master 3S</h3>
             <div class="product-price">
@@ -655,7 +657,7 @@
 
     <div class="product-card" data-category="accessories">
         <div class="product-badge">Sale</div>
-        <img src="./assets/watches2.png" alt="Garmin Fenix 7" class="product-image" loading="lazy">
+        <img src="./assets/GarminFenix7.jpg" alt="Garmin Fenix 7" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Garmin Fenix 7</h3>
             <div class="product-price">
@@ -678,7 +680,7 @@
     </div>
 
     <div class="product-card" data-category="accessories">
-        <img src="./assets/anker-powerbank.jpg" alt="Anker PowerCore 26800" class="product-image" loading="lazy">
+        <img src="./assets/AnkerPowerCore.jpg" alt="Anker PowerCore 26800" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Anker PowerCore 26800</h3>
             <div class="product-price">
@@ -701,7 +703,7 @@
 
     <div class="product-card" data-category="accessories">
         <div class="product-badge">New</div>
-        <img src="./assets/belkin-charger.jpg" alt="Belkin 3-in-1 Wireless Charger" class="product-image" loading="lazy">
+        <img src="./assets/BelkinWirelessCharger.jpg" alt="Belkin 3-in-1 Wireless Charger" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Belkin 3-in-1 Charger</h3>
             <div class="product-price">
@@ -723,7 +725,7 @@
     </div>
 
     <div class="product-card" data-category="accessories">
-        <img src="./assets/sandisk-extreme.jpg" alt="SanDisk Extreme Portable SSD" class="product-image" loading="lazy">
+        <img src="./assets/SanDiskSSD.jpg" alt="SanDisk Extreme Portable SSD" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">SanDisk Extreme SSD 1TB</h3>
             <div class="product-price">
@@ -747,7 +749,7 @@
 
     <div class="product-card" data-category="accessories">
         <div class="product-badge">Limited</div>
-        <img src="./assets/ugreen-dock.jpg" alt="UGREEN USB-C Docking Station" class="product-image" loading="lazy">
+        <img src="./assets/UGREENUSB-CDockingStation.jpg" alt="UGREEN USB-C Docking Station" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">UGREEN USB-C Dock</h3>
             <div class="product-price">
@@ -771,7 +773,7 @@
     <!-- Gaming (10 products) -->
     <div class="product-card" data-category="gaming">
         <div class="product-badge">New</div>
-        <img src="./assets/ps5.jpg" alt="PlayStation 5" class="product-image" loading="lazy">
+        <img src="./assets/PlayStation5.jpg" alt="PlayStation 5" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">PlayStation 5</h3>
             <div class="product-price">
@@ -794,7 +796,7 @@
 
     <div class="product-card" data-category="gaming">
         <div class="product-badge">Best Seller</div>
-        <img src="./assets/xbox-series-x.jpg" alt="Xbox Series X" class="product-image" loading="lazy">
+        <img src="./assets/XboxSeriesX.jpg" alt="Xbox Series X" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Xbox Series X</h3>
             <div class="product-price">
@@ -816,7 +818,7 @@
     </div>
 
     <div class="product-card" data-category="gaming">
-        <img src="./assets/nintendo-switch.jpg" alt="Nintendo Switch OLED" class="product-image" loading="lazy">
+        <img src="./assets/NintendoSwitch.jpg" alt="Nintendo Switch OLED" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Nintendo Switch OLED</h3>
             <div class="product-price">
@@ -839,7 +841,7 @@
 
     <div class="product-card" data-category="gaming">
         <div class="product-badge">Popular</div>
-        <img src="./assets/steam-deck.jpg" alt="Steam Deck" class="product-image" loading="lazy">
+        <img src="./assets/SteamDeck.jpg" alt="Steam Deck" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Steam Deck</h3>
             <div class="product-price">
@@ -861,7 +863,7 @@
     </div>
 
     <div class="product-card" data-category="gaming">
-        <img src="./assets/razer-blade.jpg" alt="Razer Blade 15 Gaming Laptop" class="product-image" loading="lazy">
+        <img src="./assets/RazerBladeGaming.jpg" alt="Razer Blade 15 Gaming Laptop" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Razer Blade 15</h3>
             <div class="product-price">
@@ -884,7 +886,7 @@
 
     <div class="product-card" data-category="gaming">
         <div class="product-badge">Sale</div>
-        <img src="./assets/logitech-g-pro.jpg" alt="Logitech G Pro X Gaming Headset" class="product-image" loading="lazy">
+        <img src="./assets/LogitechHeadset.jpg" alt="Logitech G Pro X Gaming Headset" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Logitech G Pro X</h3>
             <div class="product-price">
@@ -907,7 +909,7 @@
     </div>
 
     <div class="product-card" data-category="gaming">
-        <img src="./assets/razer-viper.jpg" alt="Razer Viper Ultimate" class="product-image" loading="lazy">
+        <img src="./assets/RazerViper.jpg" alt="Razer Viper Ultimate" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Razer Viper Ultimate</h3>
             <div class="product-price">
@@ -930,7 +932,7 @@
 
     <div class="product-card" data-category="gaming">
         <div class="product-badge">New</div>
-        <img src="./assets/xbox-elite.jpg" alt="Xbox Elite Series 2 Controller" class="product-image" loading="lazy">
+        <img src="./assets/XboxController.jpg" alt="Xbox Elite Series 2 Controller" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Xbox Elite Controller</h3>
             <div class="product-price">
@@ -952,7 +954,7 @@
     </div>
 
     <div class="product-card" data-category="gaming">
-        <img src="./assets/ps5-controller.jpg" alt="DualSense Edge Wireless Controller" class="product-image" loading="lazy">
+        <img src="./assets/DualSenseEdge.jpg" alt="DualSense Edge Wireless Controller" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">DualSense Edge</h3>
             <div class="product-price">
@@ -975,7 +977,7 @@
 
     <div class="product-card" data-category="gaming">
         <div class="product-badge">Limited</div>
-        <img src="./assets/alienware-monitor.jpg" alt="Alienware 34 QD-OLED Gaming Monitor" class="product-image" loading="lazy">
+        <img src="./assets/AlienwareMonitor.jpg" alt="Alienware 34 QD-OLED Gaming Monitor" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Alienware 34" QD-OLED</h3>
             <div class="product-price">
@@ -999,7 +1001,7 @@
     <!-- Smart Home (10 products) -->
     <div class="product-card" data-category="smart-home">
         <div class="product-badge">New</div>
-        <img src="./assets/google-nest.jpg" alt="Google Nest Hub (2nd Gen)" class="product-image" loading="lazy">
+        <img src="./assets/GoogleNestHub.jpg" alt="Google Nest Hub (2nd Gen)" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Google Nest Hub (2nd Gen)</h3>
             <div class="product-price">
@@ -1022,7 +1024,7 @@
 
     <div class="product-card" data-category="smart-home">
         <div class="product-badge">Best Seller</div>
-        <img src="./assets/echo-dot.jpg" alt="Echo Dot (5th Gen)" class="product-image" loading="lazy">
+        <img src="./assets/EchoDot.jpg" alt="Echo Dot (5th Gen)" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Echo Dot (5th Gen)</h3>
             <div class="product-price">
@@ -1044,7 +1046,7 @@
     </div>
 
     <div class="product-card" data-category="smart-home">
-        <img src="./assets/ring-doorbell.jpg" alt="Ring Video Doorbell Pro 2" class="product-image" loading="lazy">
+        <img src="./assets/RingDoorbellPro2.jpg" alt="Ring Video Doorbell Pro 2" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Ring Doorbell Pro 2</h3>
             <div class="product-price">
@@ -1067,7 +1069,7 @@
 
     <div class="product-card" data-category="smart-home">
         <div class="product-badge">Popular</div>
-        <img src="./assets/philips-hue.jpg" alt="Philips Hue White & Color Ambiance" class="product-image" loading="lazy">
+        <img src="./assets/PhilipsBulbs.jpg" alt="Philips Hue White & Color Ambiance" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Philips Hue Color Bulbs</h3>
             <div class="product-price">
@@ -1090,7 +1092,7 @@
     </div>
 
     <div class="product-card" data-category="smart-home">
-        <img src="./assets/ecobee-thermostat.jpg" alt="ecobee Smart Thermostat" class="product-image" loading="lazy">
+        <img src="./assets/ecobeeSmartThermostat.jpg" alt="ecobee Smart Thermostat" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">ecobee Smart Thermostat</h3>
             <div class="product-price">
@@ -1113,7 +1115,7 @@
 
     <div class="product-card" data-category="smart-home">
         <div class="product-badge">Sale</div>
-        <img src="./assets/roborock-s7.jpg" alt="Roborock S7 Robot Vacuum" class="product-image" loading="lazy">
+        <img src="./assets/RoborockVacuum.jpg" alt="Roborock S7 Robot Vacuum" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Roborock S7 Robot Vacuum</h3>
             <div class="product-price">
@@ -1136,7 +1138,7 @@
     </div>
 
     <div class="product-card" data-category="smart-home">
-        <img src="./assets/wemo-smart-plug.jpg" alt="Wemo Mini Smart Plug" class="product-image" loading="lazy">
+        <img src="./assets/WemoMiniSmartPlug.jpg" alt="Wemo Mini Smart Plug" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Wemo Mini Smart Plug</h3>
             <div class="product-price">
@@ -1159,7 +1161,7 @@
 
     <div class="product-card" data-category="smart-home">
         <div class="product-badge">New</div>
-        <img src="./assets/arlo-pro-4.jpg" alt="Arlo Pro 4 Security Camera" class="product-image" loading="lazy">
+        <img src="./assets/ArloPro4Camera.jpg" alt="Arlo Pro 4 Security Camera" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Arlo Pro 4 Security Camera</h3>
             <div class="product-price">
@@ -1181,7 +1183,7 @@
     </div>
 
     <div class="product-card" data-category="smart-home">
-        <img src="./assets/lutron-caseta.jpg" alt="Lutron Caseta Smart Dimmer" class="product-image" loading="lazy">
+        <img src="./assets/LutronSmartDimmer.jpg" alt="Lutron Caseta Smart Dimmer" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">Lutron Caseta Smart Dimmer</h3>
             <div class="product-price">
@@ -1204,7 +1206,7 @@
 
     <div class="product-card" data-category="smart-home">
         <div class="product-badge">Limited</div>
-        <img src="./assets/august-smart-lock.jpg" alt="August Wi-Fi Smart Lock" class="product-image" loading="lazy">
+        <img src="./assets/AugustSmartLock.jpg" alt="August Wi-Fi Smart Lock" class="product-image" loading="lazy">
         <div class="product-info">
             <h3 class="product-title">August Wi-Fi Smart Lock</h3>
             <div class="product-price">
@@ -1226,11 +1228,11 @@
     </div>
 </div>
 <div class="pagination">
-                <a href="#" class="page-btn active">1</a>
-                <a href="#" class="page-btn">2</a>
-                <a href="#" class="page-btn">3</a>
-                <a href="#" class="page-btn">Next <i class="fas fa-chevron-right"></i></a>
-            </div>
+    <a href="#" class="page-btn active">1</a>
+    <a href="#" class="page-btn">2</a>
+    <a href="#" class="page-btn">3</a>
+    <a href="#" class="page-btn">Next <i class="fas fa-chevron-right"></i></a>
+</div>
     </section>
 
     <section class="newsletter">

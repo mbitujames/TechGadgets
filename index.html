@@ -34,6 +34,7 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link">Shop <i class="fas fa-chevron-down"></i></a>
                             <ul class="dropdown-menu">
+                                <li><a href="products.html?category=all">Products</a></li>
                                 <li><a href="products.html?category=laptops">Laptops</a></li>
                                 <li><a href="products.html?category=smartphones">Smartphones</a></li>
                                 <li><a href="products.html?category=accessories">Accessories</a></li>
@@ -62,20 +63,33 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Discover the Latest <span>Tech Gadgets</span></h1>
-                <p class="hero-text">High-quality technology products at unbeatable prices. Free shipping on all orders over $50.</p>
-                <div class="hero-btns">
-                    <a href="#" class="btn btn-primary">Shop Now</a>
-                    <a href="#" class="btn btn-outline">View Deals</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="./assets/hero.jpg" alt="Tech gadgets" loading="lazy">
+    <!-- Video Background -->
+    <video autoplay muted loop playsinline class="hero-video" poster="assets/hero-fallback.jpg">
+        <source src="./assets/hero.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Fallback Image for Non-Video Support -->
+    <div class="hero-fallback"></div>
+
+    <!-- Foreground Content -->
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">Discover the Latest <span>Tech Gadgets</span></h1>
+            <p class="hero-text">High-quality technology products at unbeatable prices. Free shipping on all orders over $50.</p>
+            <div class="hero-btns">
+                <a href="#" class="btn btn-primary">Shop Now</a>
+                <a href="#" class="btn btn-secondary">View Deals</a>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Scroll Down Arrow -->
+    <div class="scroll-down">
+        <span></span>
+    </div>
+</section>
+
 
     <!-- Categories Section -->
     <section class="categories">
