@@ -8,35 +8,46 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <header class="header">
         <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <i class="fas fa-laptop-code logo-icon"></i>
-                    <span>TechGadgets</span>
+            <div class="header-main">
+                <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
                 </div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="nav-link">Shop <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="products.html?category=laptops">Laptops</a></li>
-                            <li><a href="products.html?category=smartphones">Smartphones</a></li>
-                            <li><a href="products.html?category=accessories">Accessories</a></li>
-                            <li><a href="products.html?category=gaming">Gaming</a></li>
-                            <li><a href="products.html?category=smart-home">Smart Home</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li>
-                        <a href="cart.html" class="nav-link active cart-icon">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="cart-count">0</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon"><i class="fas fa-laptop-code"></i></span>
+                    <span class="logo-text">TechGadgets</span>
+                </a>
+                <nav class="navbar" id="navbar">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link active">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link">Shop <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="products.html?category=all">All Products</a></li>
+                                <li><a href="products.html?category=laptops">Laptops</a></li>
+                                <li><a href="products.html?category=smartphones">Smartphones</a></li>
+                                <li><a href="products.html?category=accessories">Accessories</a></li>
+                                <li><a href="products.html?category=gaming">Gaming</a></li>
+                                <li><a href="products.html?category=smart-home">Smart Home</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-icons">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search products...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <a href="#" class="icon-link"><i class="fas fa-user"></i></a>
+                    <a href="cart.html" class="icon-link cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
 

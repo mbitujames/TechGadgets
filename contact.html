@@ -8,37 +8,48 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav class="navbar">
-        <div class="logo">
-          <i class="fas fa-laptop-code"></i>
-          <span>TechGadgets</span>
+  <header class="header">
+        <div class="container">
+            <div class="header-main">
+                <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon"><i class="fas fa-laptop-code"></i></span>
+                    <span class="logo-text">TechGadgets</span>
+                </a>
+                <nav class="navbar" id="navbar">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link active">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link">Shop <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="products.html?category=all">All Products</a></li>
+                                <li><a href="products.html?category=laptops">Laptops</a></li>
+                                <li><a href="products.html?category=smartphones">Smartphones</a></li>
+                                <li><a href="products.html?category=accessories">Accessories</a></li>
+                                <li><a href="products.html?category=gaming">Gaming</a></li>
+                                <li><a href="products.html?category=smart-home">Smart Home</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-icons">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search products...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <a href="#" class="icon-link"><i class="fas fa-user"></i></a>
+                    <a href="cart.html" class="icon-link cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
         </div>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li class="dropdown">
-            <a href="#" class="nav-link">Shop <i class="fas fa-chevron-down"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="products.html?category=laptops">Laptops</a></li>
-              <li><a href="products.html?category=smartphones">Smartphones</a></li>
-              <li><a href="products.html?category=accessories">Accessories</a></li>
-              <li><a href="products.html?category=gaming">Gaming</a></li>
-              <li><a href="products.html?category=smart-home">Smart Home</a></li>
-            </ul>
-          </li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
-          <li>
-            <a href="cart.html" class="cart-icon">
-              <i class="fas fa-shopping-cart"></i>
-              <span class="cart-count">0</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    </header>
 
   <section class="contact-hero">
     <div class="container">
@@ -60,7 +71,7 @@
             </div>
             <div class="info-content">
               <h3>Address</h3>
-              <p>123 Tech Street, Silicon Valley, CA 94025</p>
+              <p>Nairobi, Kenya</p>
             </div>
           </div>
           
@@ -70,7 +81,7 @@
             </div>
             <div class="info-content">
               <h3>Phone</h3>
-              <p>+1 (555) 123-4567</p>
+              <p>+254 716 519 766</p>
               <p>Mon-Fri: 9am - 6pm PST</p>
             </div>
           </div>
@@ -81,8 +92,8 @@
             </div>
             <div class="info-content">
               <h3>Email</h3>
-              <p>support@techgadgets.com</p>
-              <p>sales@techgadgets.com</p>
+              <p>mbitumutonga@gmail.com</p>
+              <p>suport@techgadgets.com</p>
             </div>
           </div>
           
@@ -131,7 +142,7 @@
     <div class="container">
       <h2>Our Location</h2>
       <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.465767746083!2d-122.086246224689!3d37.42206557204988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fba02425dad8f%3A0x6c296c66619367e0!2sGoogleplex!5e0!3m2!1sen!2sus!4v1689872345678!5m2!1sen!2sus" 
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.123456789!2d36.817244!3d-1.283333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d123456789%3A0xabcdef1234567890!2sJethalal%20Chambers!5e0!3m2!1sen!2ske!4v1689872345678!5m2!1sen!2ske" 
                 width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>

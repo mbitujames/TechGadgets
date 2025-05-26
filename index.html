@@ -21,20 +21,20 @@
     <header class="header">
         <div class="container">
             <div class="header-main">
-                <div class="mobile-menu-toggle">
+                <div class="mobile-menu-toggle" id="mobile-menu-toggle">
                     <i class="fas fa-bars"></i>
                 </div>
                 <a href="index.html" class="logo">
                     <span class="logo-icon"><i class="fas fa-laptop-code"></i></span>
                     <span class="logo-text">TechGadgets</span>
                 </a>
-                <nav class="navbar">
+                <nav class="navbar" id="navbar">
                     <ul class="nav-list">
                         <li><a href="index.html" class="nav-link active">Home</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link">Shop <i class="fas fa-chevron-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="products.html?category=all">Products</a></li>
+                                <li><a href="products.html?category=all">All Products</a></li>
                                 <li><a href="products.html?category=laptops">Laptops</a></li>
                                 <li><a href="products.html?category=smartphones">Smartphones</a></li>
                                 <li><a href="products.html?category=accessories">Accessories</a></li>
@@ -52,7 +52,7 @@
                         <button><i class="fas fa-search"></i></button>
                     </div>
                     <a href="#" class="icon-link"><i class="fas fa-user"></i></a>
-                    <a href="#" class="icon-link cart-icon">
+                    <a href="cart.html" class="icon-link cart-icon">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="cart-count">0</span>
                     </a>
@@ -78,8 +78,8 @@
             <h1 class="hero-title">Discover the Latest <span>Tech Gadgets</span></h1>
             <p class="hero-text">High-quality technology products at unbeatable prices. Free shipping on all orders over $50.</p>
             <div class="hero-btns">
-                <a href="#" class="btn btn-primary">Shop Now</a>
-                <a href="#" class="btn btn-secondary">View Deals</a>
+                <a href="products.html" class="btn btn-primary">Shop Now</a>
+                <a href="products.html" class="btn btn-secondary">View Deals</a>
             </div>
         </div>
     </div>
@@ -96,28 +96,28 @@
         <div class="container">
             <h2 class="section-title">Shop by <span>Category</span></h2>
             <div class="categories-grid">
-                <a href="#" class="category-card">
+                <a href="products.html?category=laptops" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-laptop"></i>
                     </div>
                     <h3>Laptops</h3>
                     <p>Powerful machines for work and play</p>
                 </a>
-                <a href="#" class="category-card">
+                <a href="products.html?category=smartphones" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                     <h3>Smartphones</h3>
                     <p>Latest models from top brands</p>
                 </a>
-                <a href="#" class="category-card">
+                <a href="products.html?category=accessories" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-headphones"></i>
                     </div>
                     <h3>Accessories</h3>
                     <p>Enhance your tech experience</p>
                 </a>
-                <a href="#" class="category-card">
+                <a href="products.html?category=gaming" class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-gamepad"></i>
                     </div>
@@ -133,7 +133,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Featured <span>Products</span></h2>
-                <a href="#" class="view-all">View All</a>
+                <a href="products.html" class="view-all">View All</a>
             </div>
             <div class="products-grid">
                 <!-- Product cards will be dynamically inserted here -->
@@ -147,7 +147,7 @@
             <div class="banner-content">
                 <h2>Summer Sale <span>Up to 40% Off</span></h2>
                 <p>Limited time offer on selected products</p>
-                <a href="#" class="btn btn-white">Shop Sale</a>
+                <a href="products.html" class="btn btn-white">Shop Sale</a>
             </div>
         </div>
     </section>
@@ -167,9 +167,9 @@
                     </div>
                     <p class="testimonial-text">"The laptop I bought exceeded my expectations. Fast delivery and excellent customer service!"</p>
                     <div class="customer">
-                        <img src="images/customer1.jpg" alt="Customer" loading="lazy">
+                        <img src="./assets/customer1.jpg" alt="Customer" loading="lazy">
                         <div>
-                            <h4>Sarah Johnson</h4>
+                            <h4>Charity S</h4>
                             <p>Verified Buyer</p>
                         </div>
                     </div>
@@ -184,7 +184,7 @@
                     </div>
                     <p class="testimonial-text">"Great selection of tech gadgets at competitive prices. Will definitely shop here again."</p>
                     <div class="customer">
-                        <img src="images/customer2.jpg" alt="Customer" loading="lazy">
+                        <img src="./assets/customer2.jpg" alt="Customer" loading="lazy">
                         <div>
                             <h4>Michael Chen</h4>
                             <p>Verified Buyer</p>
@@ -201,7 +201,7 @@
                     </div>
                     <p class="testimonial-text">"The wireless headphones are amazing! Battery life is incredible and sound quality is top-notch."</p>
                     <div class="customer">
-                        <img src="images/customer3.jpg" alt="Customer" loading="lazy">
+                        <img src="./assets/customer3.jpg" alt="Customer" loading="lazy">
                         <div>
                             <h4>David Wilson</h4>
                             <p>Verified Buyer</p>
